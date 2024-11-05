@@ -14,7 +14,7 @@ interface Props {
   };
 }
 
-export default function ({ params }: Props) {
+export default function ProductPage({ params }: Props) {
   const { slug } = params;
   const product = initialData.products.find((product) => product.slug === slug);
 
@@ -27,15 +27,15 @@ export default function ({ params }: Props) {
       <div className="col-span-1 md:col-span-2">
         {/* Mobile Slideshow */}
         <ProductMobileSlideshow
-          title={product?.title}
-          images={product?.images}
+          title={product?.title ?? ""}
+          images={product?.images ?? []}
           className="block md:hidden"
         />
 
         {/* Desktop Slideshow */}
-        <ProductSlideshow 
-          title={product?.title} 
-          images={product?.images} 
+        <ProductSlideshow
+          title={product?.title ?? ""}
+          images={product?.images ?? []}
           className="hidden md:block"
         />
       </div>
@@ -50,8 +50,8 @@ export default function ({ params }: Props) {
 
         {/* Size Selector */}
         <SizeSelector
-          selectedSize={product?.sizes[0]}
-          availableSizes={product?.sizes}
+          selectedSize={product?.sizes[0] ?? "M"}
+          availableSizes={product?.sizes ?? []}
         />
 
         {/* Quantity Selector */}

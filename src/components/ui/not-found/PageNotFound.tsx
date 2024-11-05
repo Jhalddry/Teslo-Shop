@@ -12,7 +12,7 @@ export const PageNotFound = () => {
         </p>
 
         <p className="font-light">
-          <span>Go back to the</span>
+          <span>Go back to the </span>
 
           <Link href="/" className="font-normal hover:underline transition-all">
             home
